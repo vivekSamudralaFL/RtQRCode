@@ -1,0 +1,12 @@
+<ng-container *ngIf="!qrResult" class="container container-fluid p-3">
+  <zxing-scanner
+    [formats]="formatsEnabled"
+    (scanSuccess)="onCodeResult($event)"
+  ></zxing-scanner>
+</ng-container>
+<ng-container *ngIf="qrResult" class="container container-fluid">
+  <h4 class="m-2 p-1">{{ qrResult }}</h4>
+  <button class="btn btn-success active m-2" (click)="qrResult = ''">
+    Scan New
+  </button>
+</ng-container>
