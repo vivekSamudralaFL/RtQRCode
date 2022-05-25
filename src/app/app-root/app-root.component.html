@@ -17,7 +17,12 @@
     <ng-container *ngFor="let part of logisticsData">
       <tr>
         <td>
-          <input type="checkbox" name="partNumber" (click)="select(part)" [checked]="isPartSelected(part)"/>
+          <input
+            type="checkbox"
+            name="partNumber"
+            (click)="select(part)"
+            [checked]="isPartSelected(part)"
+          />
         </td>
         <td>{{ part.partNumber }}</td>
         <td>{{ part.partName }}</td>
@@ -25,9 +30,6 @@
     </ng-container>
   </tbody>
 </table>
-<p>
-  {{ checkedItems }}
-</p>
 <button
   name="Generate QR Code"
   class="btn m-1 btn-primary"
